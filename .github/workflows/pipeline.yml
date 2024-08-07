@@ -6,8 +6,8 @@ on:
   push:
     branches:
       - master
-      - relase/uat
-      - relase/test
+      - release/uat
+      - release/test
   pull_request:
     branches:
       - master
