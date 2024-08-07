@@ -88,22 +88,22 @@ resource "aws_iam_role_policy" "dynamodb_policy" {
 
 # Create Lambda function to get student data from dynamodb table with Python runtime
 resource "aws_lambda_function" "get_lambda_function_object" {
-  filename         = "project-get-student-lambda.zip"
+  filename         = "project-get-student-Lambda.zip"
   function_name    = "project-get-student-Lambda"
   role             = aws_iam_role.iam_for_both_lambda.arn
   handler          = "lambda_get_function.lambda_handler"
-  source_code_hash = filebase64sha256("project-get-student-lambda.zip")
+  source_code_hash = filebase64sha256("project-get-student-Lambda.zip")
   runtime          = "python3.12"
   timeout          = "60"
 }
 
 # Create Lambda function to insert student data into dynamodb table with Python runtime
 resource "aws_lambda_function" "insert_lambda_function_object" {
-  filename         = "project-insert-student-lambda.zip"
+  filename         = "project-insert-student-Lambda.zip"
   function_name    = "project-insert-student-Lambda"
   role             = aws_iam_role.iam_for_both_lambda.arn
   handler          = "lambda_insert_function.lambda_handler"
-  source_code_hash = filebase64sha256("project-insert-student-lambda.zip")
+  source_code_hash = filebase64sha256("project-insert-student-Lambda.zip")
   runtime          = "python3.12"
   timeout          = "60"
 }
